@@ -1133,5 +1133,10 @@ func (sm *StateManager) GetNtwkVersion(ctx context.Context, height abi.ChainEpoc
 		return runtime.NetworkVersion0
 	}
 
-	return runtime.NetworkVersion1
+	if height <= build.UpgradeSmokeHeight {
+		return runtime.NetworkVersion1
+	}
+
+	return runtime.NetworkVersion1 // TODO:
+	//return runtime.NetworkVersion2
 }

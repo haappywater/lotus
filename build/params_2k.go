@@ -13,6 +13,8 @@ import (
 const UpgradeBreezeHeight = -1
 const BreezeGasTampingDuration = 0
 
+const UpgradeSmokeHeight = -1
+
 func init() {
 	power.ConsensusMinerMinPower = big.NewInt(2048)
 	miner.SupportedProofTypes = map[abi.RegisteredSealProof]struct{}{
